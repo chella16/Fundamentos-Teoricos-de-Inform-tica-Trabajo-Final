@@ -1,0 +1,271 @@
+# ARCHIVO DE EJEMPLOS COMPLETOS - RECONOCEDOR DE GRAMÁTICA
+# Este archivo contiene ejemplos de todas las estructuras aceptadas por el autómata
+# Cada ejemplo está separado por líneas vacías para facilitar la lectura
+
+# =====================================================================
+# ESTRUCTURAS BÁSICAS - SOLO COMIENZA/TERMINA
+# =====================================================================
+
+# Programa mínimo
+comienza termina
+
+# =====================================================================
+# INSTRUCCIÓN LEER - Variables sin < >
+# =====================================================================
+
+# Leer una variable
+comienza leer nombre; termina
+
+# Leer múltiples variables
+comienza leer x; leer y; leer z; termina
+
+# Leer con nombres largos
+comienza leer nombreCompleto; leer edadUsuario; termina
+
+# =====================================================================
+# INSTRUCCIÓN ESCRIBIR - Expresiones con y sin < >
+# =====================================================================
+
+# Escribir expresión sin < >
+comienza escribir mensaje; termina
+
+# Escribir expresión con < >
+comienza escribir <resultado>; termina
+
+# Escribir múltiples expresiones
+comienza escribir saludo; escribir <nombre>; escribir despedida; termina
+
+# =====================================================================
+# ASIGNACIONES - Variable sin < >, expresión con y sin < >
+# =====================================================================
+
+# Asignación simple sin < > en expresión
+comienza x=valor; termina
+
+# Asignación simple con < > en expresión
+comienza resultado=<calculo>; termina
+
+# Múltiples asignaciones
+comienza a=1; b=<dos>; c=tres; termina
+
+# Asignaciones con nombres largos
+comienza contador=inicial; suma=<total>; promedio=resultado; termina
+
+# =====================================================================
+# COMBINACIONES DE INSTRUCCIONES BÁSICAS
+# =====================================================================
+
+# Leer y escribir
+comienza leer nombre; escribir saludo; termina
+
+# Leer y asignar
+comienza leer x; resultado=<procesado>; termina
+
+# Asignar y escribir
+comienza valor=10; escribir <valor>; termina
+
+# Secuencia completa: leer, asignar, escribir
+comienza leer entrada; procesado=<entrada>; escribir resultado; termina
+
+# Múltiples operaciones mixtas
+comienza leer a; leer b; suma=<total>; escribir suma; escribir <mensaje>; termina
+
+# =====================================================================
+# CONDICIONALES SIMPLES (SI-ENTONCES-FINSI)
+# =====================================================================
+
+# Condicional básico con una instrucción
+comienza si <condicion> entonces <accion> finsi termina
+
+# Condicional con múltiples instrucciones
+comienza si <mayor> entonces <msg1> <msg2> <msg3> finsi termina
+
+# Condicional con leer dentro
+comienza si <verificar> entonces leer dato; finsi termina
+
+# Condicional con escribir dentro
+comienza si <mostrar> entonces escribir resultado; finsi termina
+
+# Condicional con asignación dentro
+comienza si <calcular> entonces valor=<nuevo>; finsi termina
+
+# Condicional con instrucciones mixtas
+comienza si <procesar> entonces leer x; resultado=<calculo>; escribir <salida>; finsi termina
+
+# =====================================================================
+# CONDICIONALES DOBLES (SI-ENTONCES-SINO-FINSI)
+# =====================================================================
+
+# Condicional doble básico
+comienza si <condicion> entonces <accionSi> sino <accionNo> finsi termina
+
+# Condicional doble con múltiples instrucciones en ambas ramas
+comienza si <test> entonces <inst1> <inst2> sino <inst3> <inst4> finsi termina
+
+# Condicional doble con leer/escribir
+comienza si <verificar> entonces leer dato; sino escribir error; finsi termina
+
+# Condicional doble con asignaciones
+comienza si <positivo> entonces resultado=<bueno>; sino resultado=<malo>; finsi termina
+
+# Condicional doble complejo
+comienza si <evaluar> entonces leer entrada; valor=<procesado>; sino valor=<defecto>; escribir mensaje; finsi termina
+
+# =====================================================================
+# BUCLES MIENTRAS (MIENTRAS-HACER-FINMIENTRAS)
+# =====================================================================
+
+# Bucle mientras básico
+comienza mientras <condicion> hacer <accion> finmientras termina
+
+# Bucle mientras con múltiples instrucciones
+comienza mientras <continuar> hacer <paso1> <paso2> <paso3> finmientras termina
+
+# Bucle mientras con leer
+comienza mientras <activo> hacer leer dato; finmientras termina
+
+# Bucle mientras con escribir
+comienza mientras <mostrar> hacer escribir <item>; finmientras termina
+
+# Bucle mientras con asignación
+comienza mientras <procesar> hacer contador=<incremento>; finmientras termina
+
+# Bucle mientras complejo
+comienza mientras <iteracion> hacer leer valor; suma=<acumulado>; escribir progreso; finmientras termina
+
+# =====================================================================
+# BUCLES REPETIR (REPETIR-HASTAQUE)
+# =====================================================================
+
+# Bucle do-while básico
+comienza repetir <accion> hastaque <condicion> termina
+
+# Bucle do-while con múltiples instrucciones
+comienza repetir <paso1> <paso2> <paso3> hastaque <finalizar> termina
+
+# Bucle do-while con leer
+comienza repetir leer opcion; hastaque <salir> termina
+
+# Bucle do-while con escribir
+comienza repetir escribir <pregunta>; hastaque <respuesta> termina
+
+# Bucle do-while con asignación
+comienza repetir contador=<siguiente>; hastaque <limite> termina
+
+# Bucle do-while complejo
+comienza repetir leer entrada; validado=<verificacion>; escribir estado; hastaque <correcto> termina
+
+# =====================================================================
+# ESTRUCTURAS ANIDADAS - MIENTRAS DENTRO DE SI
+# =====================================================================
+
+# While dentro de if simple
+comienza si <permitir> entonces mientras <activo> hacer <proceso> finmientras finsi termina
+
+# While dentro de if con múltiples instrucciones
+comienza si <iniciar> entonces mientras <ejecutar> hacer <tarea1> <tarea2> finmientras finsi termina
+
+# While dentro de if-else (rama entonces)
+comienza si <modo> entonces mientras <bucle1> hacer <accion1> finmientras sino <alternativa> finsi termina
+
+# While dentro de if-else (rama sino)
+comienza si <condicion> entonces <directa> sino mientras <bucle2> hacer <accion2> finmientras finsi termina
+
+# While dentro de if con instrucciones antes y después
+comienza si <preparar> entonces <setup> mientras <ciclo> hacer <operacion> finmientras <cleanup> finsi termina
+
+# =====================================================================
+# ESTRUCTURAS ANIDADAS - SI DENTRO DE MIENTRAS
+# =====================================================================
+
+# If simple dentro de while
+comienza mientras <principal> hacer si <subcondicion> entonces <subaccion> finsi finmientras termina
+
+# If doble dentro de while
+comienza mientras <loop> hacer si <test> entonces <accionSi> sino <accionNo> finsi finmientras termina
+
+# If dentro de while con múltiples instrucciones
+comienza mientras <ejecutar> hacer <previa> si <decision> entonces <rama1> finsi <posterior> finmientras termina
+
+# If-else dentro de while con instrucciones mixtas
+comienza mientras <procesar> hacer si <evaluar> entonces leer dato; sino valor=<defecto>; finsi escribir resultado; finmientras termina
+
+# =====================================================================
+# PROGRAMAS COMPLEJOS CON MÚLTIPLES ESTRUCTURAS
+# =====================================================================
+
+# Programa con todas las estructuras básicas
+comienza leer entrada; valor=<inicial>; escribir mensaje; si <validar> entonces resultado=<procesado>; finsi termina
+
+# Programa con bucles y condicionales
+comienza mientras <activo> hacer leer dato; si <correcto> entonces suma=<acumulado>; sino escribir error; finsi finmientras escribir <total>; termina
+
+# Programa con estructuras anidadas complejas
+comienza leer modo; si <automatico> entonces mientras <ejecutar> hacer leer parametro; si <valido> entonces proceso=<aplicado>; finsi finmientras finsi escribir estado; termina
+
+# Programa con do-while y condicionales
+comienza repetir leer opcion; si <valida> entonces ejecutar=<accion>; sino escribir error; finsi hastaque <salir> termina
+
+# =====================================================================
+# SINTAXIS PASCALCASE SIN ESPACIOS
+# =====================================================================
+
+# Estructuras básicas en PascalCase
+ComenzaLeerNombre;Termina
+
+ComenzaEscribir<mensaje>;Termina
+
+Comienza<x>=<valor>;Termina
+
+# Condicionales en PascalCase
+ComenzaSi<condicion>Entonces<accion>FinSiTermina
+
+ComenzaSi<test>Entonces<accionSi>Sino<accionNo>FinSiTermina
+
+# Bucles en PascalCase
+ComenzaMientras<contador>Hacer<incremento>FinMientrasTermina
+
+ComenzaRepetir<proceso>Hasta<limite>Termina
+
+# Estructuras anidadas en PascalCase
+ComenzaSi<modo>EntoncesMientras<bucle>Hacer<operacion>FinMientrasFinSiTermina
+
+ComenzaMientras<principal>HacerSi<sub>Entonces<accion>FinSiFinMientrasTermina
+
+# =====================================================================
+# CASOS LÍMITE Y EJEMPLOS ADICIONALES
+# =====================================================================
+
+# Múltiples asignaciones consecutivas
+comienza a=valor1; b=<valor2>; c=valor3; d=<valor4>; termina
+
+# Múltiples lecturas y escrituras
+comienza leer a; leer b; leer c; escribir <resultado1>; escribir resultado2; escribir <resultado3>; termina
+
+# Condicionales con muchas instrucciones
+comienza si <procesar> entonces leer x; leer y; suma=<total>; promedio=<calculo>; escribir suma; escribir <promedio>; finsi termina
+
+# Bucle con secuencia larga
+comienza mientras <continuar> hacer leer entrada; validar=<entrada>; escribir estado; contador=<incremento>; escribir <progreso>; finmientras termina
+
+# Programa completo con todas las características
+comienza leer configuracion; modo=<inicial>; si <automatico> entonces mientras <procesar> hacer leer datos; resultado=<calculo>; si <mostrar> entonces escribir <resultado>; finsi finmientras sino escribir <manual>; finsi escribir <finalizado>; termina
+
+# =====================================================================
+# EJEMPLOS CON VARIABLES Y EXPRESIONES DIVERSAS
+# =====================================================================
+
+# Variables alfanuméricas sin < >
+comienza leer var1; leer variable2; leer dato123; termina
+
+# Expresiones alfanuméricas con y sin < >
+comienza escribir resultado1; escribir <calculo2>; escribir suma123; termina
+
+# Asignaciones con nombres diversos
+comienza x=5; resultado=<suma>; contador1=inicial; dato123=<procesado>; termina
+
+# Condiciones diversas
+comienza si <mayor18> entonces <acceso> finsi si <menor65> entonces <descuento> finsi termina
+
+# Instrucciones diversas
+comienza si <modo1> entonces <ejecutar> <validar> <mostrar> finsi termina

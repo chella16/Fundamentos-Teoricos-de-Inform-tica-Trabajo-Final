@@ -1,0 +1,23 @@
+# Archivo con múltiples pseudocódigos multi-línea
+
+# Primer pseudocódigo - Simple
+comienza
+  leer <x>
+  escribir <x>;
+termina
+
+# Segundo pseudocódigo - Con condicional  
+comienza
+  si <condicion> entonces
+    <resultado>=<valor>;
+  finsi
+termina
+
+# Tercer pseudocódigo - Con bucle anidado
+comienza
+  mientras <limite> hacer
+    si <test> entonces
+      <accion>=<proceso>;
+    finsi
+  finmientras
+termina
