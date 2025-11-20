@@ -1,0 +1,5 @@
+Comienza 
+Si <condicion> 
+Entonces <instrucciones> 
+FinSi 
+Termina

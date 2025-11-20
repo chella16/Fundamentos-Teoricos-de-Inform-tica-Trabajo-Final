@@ -1,0 +1,3 @@
+Comienza 
+algo=<x>; 
+Termina

@@ -1,0 +1,3 @@
+Comienza 
+Escribir x;
+ Termina

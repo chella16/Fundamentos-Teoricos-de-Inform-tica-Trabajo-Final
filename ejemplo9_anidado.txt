@@ -1,0 +1,8 @@
+Comienza 
+    Si <condicion> 
+        Entonces 
+            mientras <condicion2> hacer 
+                <instrucciones> 
+            FinMientras 
+        FinSi  
+Termina

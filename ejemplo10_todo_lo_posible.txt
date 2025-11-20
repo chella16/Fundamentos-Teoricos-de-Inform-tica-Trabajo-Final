@@ -1,0 +1,14 @@
+Comienza 
+    leer x;
+    x=<nuevovalor>;
+    escribir x;
+    si <condicion> entonces
+        mientras <otracondi> hacer
+            <instrucciones>
+        FinMientras
+    sino 
+        mientras <otracondimas> hacer
+            <otrainstruccion>
+        FinMientras
+    finsi
+Termina

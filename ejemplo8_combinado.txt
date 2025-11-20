@@ -1,0 +1,1 @@
+Comienza Leer x; Escribir x; Si <x> Entonces <instrucciones> FinSi Termina

@@ -1,0 +1,1 @@
+Comienza Si <condicion> Entonces Sino <instrucciones> FinSi Termina

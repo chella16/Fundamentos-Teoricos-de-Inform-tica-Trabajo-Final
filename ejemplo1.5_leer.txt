@@ -1,0 +1,3 @@
+Comienza 
+    Leer <cualquier cosa>; 
+Termina

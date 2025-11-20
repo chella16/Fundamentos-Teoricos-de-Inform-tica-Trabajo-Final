@@ -1,0 +1,7 @@
+Comienza 
+    Mientras <condicion> hacer
+        si <algo> entonces
+            <instrucciones>
+        finsi
+    FinMientras  
+Termina
